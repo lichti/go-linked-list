@@ -99,6 +99,9 @@ func (l *List) Find(value interface{}) bool {
 			return true
 		}
 		p = p.Next
+		if p.Next == nil && p.Value == value {
+			return true
+		}
 	}
 	return false
 }
